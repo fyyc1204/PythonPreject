@@ -1,3 +1,4 @@
+'''import data to mysql'''
 import os
 import MySQLdb
 import mysql.connector
@@ -16,7 +17,7 @@ def fileOperation():
             for k, v in enumerate(lines):
                 file.write('%s%s'%(name+',',v))
             file.close()
-			
+            
             LoadFile(name)
 
 
@@ -38,11 +39,8 @@ def importToMysql():
     os.system("mysql -uroot -h 192.168.100.10 -p220582")
     os.system("use manager")
     #os.system("load data local infile 'G:\\nhtext\\z00001.TXT' replace into table test character set gb2312  fields terminated by ','  optionally enclosed by '"' lines terminated by '\r\n';")
-    
-    
+
 if __name__ == '__main__':
     #print("OK")
-    
     fileOperation()
     #LoadFile("00003")
-
