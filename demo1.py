@@ -1,5 +1,8 @@
-import sys
 import os
+print(os.getcwd())
+type = input("pleale input  the type")
 
-print(os.getcwd()}
-S
+print(type)
+
+
+
