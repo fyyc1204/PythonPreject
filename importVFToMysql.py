@@ -1,4 +1,4 @@
-'''import data to mysql'''
+''' importVFToMysql '''
 import os
 import MySQLdb
 import mysql.connector
@@ -20,18 +20,18 @@ def fileOperation():
             
             LoadFile(name)
 
-
+''' loadfile'''
 def LoadFile(name):
-	try:
-		print(name)
-		db = MySQLdb.connect("192.168.100.10","root","220582","manager" )
-		cursor = db.cursor()
-		sql = "load data local infile 'z" + name + ".TXT' replace into table test character set gb2312  fields terminated by ','  optionally enclosed by '\"' lines terminated by  '\r\n';" 
-		print( cursor.execute(sql))
-		db.commit()
-		db.close()
-	except IOError :
-		print ("error")
+    try:
+        print(name)
+        db = MySQLdb.connect("192.168.100.10","root","220582","manager" )
+        cursor = db.cursor()
+        sql = "load data local infile 'z" + name + ".TXT' replace into table test character set gb2312  fields terminated by ','  optionally enclosed by '\"' lines terminated by  '\r\n';" 
+        print( cursor.execute(sql))
+        db.commit()
+        db.close()
+    except IOError :
+        print ("error")
 	
 
 def importToMysql():    
